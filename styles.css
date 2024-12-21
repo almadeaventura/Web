@@ -433,3 +433,26 @@ body {
     .card {
         margin: 0.5rem 0;
     }
+
+/* Mejorar distancias entre las cards */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;  /* Ajustar el espacio entre cards */
+    margin: 2rem auto;
+    max-width: 1400px;
+    padding: 0 1rem;
+}
+
+/* Alinear los botones a la izquierda */
+.button-group {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;  /* Cambiar a flex-start para alinear a la izquierda */
+}
+
+/* Corregir el icono descentrado en el botón flotante */
+.whatsapp-button .icon {
+    margin: 0;  /* Eliminar el margen */
+}
