@@ -155,3 +155,6 @@ document.querySelectorAll('.card, .section-title, .price-summary').forEach(el =>
     el.classList.add('fade-in');
     observer.observe(el);
 });
+
+// Corregir el icono descentrado en el botón flotante
+document.querySelector('.whatsapp-button .icon').style.margin = '0';
