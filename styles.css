@@ -1,3 +1,16 @@
+/* Variables */
+:root {
+    --color-primary: #FF6B00;
+    --color-whatsapp: #25D366;
+    --color-text: #1d1d1f;
+    --color-background: #f5f5f7;
+    --color-border: rgba(0,0,0,0.1);
+    --transition: all 0.2s ease;
+    --shadow: 0 2px 10px rgba(0,0,0,0.1);
+    --radius: 20px;
+    --radius-full: 100px;
+}
+
 /* Reset y estilos base */
 * {
     margin: 0;
@@ -8,62 +21,23 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     line-height: 1.5;
-    background: #f5f5f7;
-    color: #1d1d1f;
+    background: var(--color-background);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
 }
 
+/* Layout */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
 }
 
-/* Estilos generales de secciones */
 .section {
     padding: 4rem 0;
 }
 
-.section-title {
-    font-size: clamp(2rem, 5vw, 2.5rem);
-    font-weight: 700;
-    margin-bottom: 1rem;
-    letter-spacing: -0.02em;
-}
-
-/* Botones globales */
-.button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    padding: 1rem 2rem;
-    border-radius: 100px;
-    font-size: 1.125rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: all 0.2s;
-    border: none;
-    cursor: pointer;
-}
-
-.button-primary {
-    background: #FF6B00;
-    color: white;
-}
-
-.button-whatsapp {
-    background: #25D366;
-    color: white;
-}
-
-/* Iconos */
-.icon {
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-}
-
-/* Estilos de Navbar */
+/* Navegación */
 .nav-float {
     position: fixed;
     top: 0;
@@ -77,13 +51,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid var(--color-border);
 }
 
 .nav-brand {
     font-weight: 600;
     font-size: 1.125rem;
-    color: #1d1d1f;
+    color: var(--color-text);
     text-decoration: none;
 }
 
@@ -92,8 +66,8 @@ body {
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;
-    background: #f5f5f7;
-    border-radius: 100px;
+    background: var(--color-background);
+    border-radius: var(--radius-full);
     font-size: 0.875rem;
 }
 
@@ -114,7 +88,7 @@ body {
     100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
 }
 
-/* Estilos del Hero */
+/* Hero Section */
 .hero {
     min-height: 100vh;
     background: #000;
@@ -151,25 +125,49 @@ body {
     gap: 0.5rem;
 }
 
+/* Botones */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: var(--radius-full);
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.button-primary {
+    background: var(--color-primary);
+    color: white;
+}
+
+.button-primary:hover {
+    background: #e65d00;
+    transform: translateY(-2px);
+}
+
+.button-whatsapp {
+    background: var(--color-whatsapp);
+    color: white;
+}
+
+.button-whatsapp:hover {
+    background: #22c15e;
+    transform: translateY(-2px);
+}
+
 .hero-buttons {
     display: flex;
     gap: 1rem;
     margin-top: 2rem;
 }
 
-@media (max-width: 640px) {
-    .hero-buttons {
-        flex-direction: column;
-        width: 100%;
-        padding: 0 1rem;
-    }
-
-    .hero-buttons .button {
-        width: 100%;
-    }
-}
-
-/* Estilos de Servicios */
+/* Cards y Grid */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -179,14 +177,15 @@ body {
 
 .card {
     background: white;
-    border-radius: 20px;
+    border-radius: var(--radius);
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
 }
 
 .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
 .card-image {
@@ -200,10 +199,12 @@ body {
 }
 
 .badge {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     padding: 0.5rem 1rem;
-    background: #f5f5f7;
-    border-radius: 100px;
+    background: var(--color-background);
+    border-radius: var(--radius-full);
     font-size: 0.875rem;
     font-weight: 500;
     margin-bottom: 1rem;
@@ -212,10 +213,11 @@ body {
 .price {
     font-size: 2rem;
     font-weight: 700;
-    color: #FF6B00;
+    color: var(--color-primary);
     margin: 1rem 0;
 }
 
+/* Lista de características */
 .features {
     list-style: none;
     margin: 1.5rem 0;
@@ -223,3 +225,173 @@ body {
 
 .features li {
     display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    color: #666;
+}
+
+.features li svg {
+    color: var(--color-primary);
+}
+
+/* FAQ Section */
+.faq-section {
+    background: white;
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--color-background);
+}
+
+.faq-question {
+    padding: 1.5rem;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    padding: 0 1.5rem;
+    height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+    opacity: 0;
+    color: #666;
+}
+
+.faq-item.active .faq-answer {
+    height: auto;
+    padding-bottom: 1.5rem;
+    opacity: 1;
+}
+
+/* Formulario */
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #666;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+/* WhatsApp flotante */
+.whatsapp-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+}
+
+.whatsapp-button {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background: var(--color-whatsapp);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+}
+
+.notification-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #ff4444;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    opacity: 0;
+    transform: scale(0);
+    transition: var(--transition);
+}
+
+.notification-badge.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.message-popup {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    background: white;
+    padding: 12px 16px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    font-size: 14px;
+    width: 200px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: var(--transition);
+    pointer-events: none;
+}
+
+.message-popup.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .hero-buttons .button {
+        width: 100%;
+    }
+
+    .section {
+        padding: 3rem 0;
+    }
+}
