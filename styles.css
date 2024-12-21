@@ -144,21 +144,25 @@ body {
 .button-primary {
     background: var(--color-primary);
     color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .button-primary:hover {
     background: #e65d00;
     transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 
 .button-whatsapp {
     background: var(--color-whatsapp);
     color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .button-whatsapp:hover {
     background: #22c15e;
     transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 
 .hero-buttons {
@@ -170,9 +174,11 @@ body {
 /* Cards y Grid */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem auto;
+    max-width: 1400px;
+    padding: 0 1rem;
 }
 
 .card {
@@ -181,21 +187,28 @@ body {
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
 }
 
 .card-image {
     width: 100%;
-    aspect-ratio: 1;
+    height: 280px;
     object-fit: cover;
+    border-radius: var(--radius) var(--radius) 0 0;
 }
 
 .card-content {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
 }
 
 .badge {
@@ -217,4 +230,199 @@ body {
     margin: 1rem 0;
 }
 
-/* Lista
+/* Lista de características */
+.features {
+    list-style: none;
+    margin: 1.5rem 0;
+    padding: 0;
+}
+
+.features li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    color: #666;
+}
+
+.features li svg {
+    color: var(--color-primary);
+}
+
+/* FAQ Section */
+.faq-section {
+    background: white;
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--color-background);
+}
+
+.faq-question {
+    padding: 1.5rem;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    padding: 0 1.5rem;
+    height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+    opacity: 0;
+    color: #666;
+}
+
+.faq-item.active .faq-answer {
+    height: auto;
+    padding-bottom: 1.5rem;
+    opacity: 1;
+}
+
+/* Formulario */
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #666;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+/* WhatsApp flotante */
+.whatsapp-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+}
+
+.whatsapp-button {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background: var(--color-whatsapp);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+}
+
+.notification-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #ff4444;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    opacity: 0;
+    transform: scale(0);
+    transition: var(--transition);
+}
+
+.notification-badge.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.message-popup {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    background: white;
+    padding: 12px 16px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    font-size: 14px;
+    width: 200px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: var(--transition);
+    pointer-events: none;
+}
+
+.message-popup.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .hero-title {
+        padding: 0 1rem;
+        font-size: 2.5rem;
+    }
+
+    .card {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        margin: 0 0.5rem;
+    }
+    
+    .form-container {
+        padding: 1rem;
+    }
+}
