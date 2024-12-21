@@ -1,3 +1,6 @@
+<!-- ======================== -->
+<!-- INICIO DOCUMENTO HTML -->
+<!-- ======================== -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,6 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parapente en Maitencillo | Vuelos desde $60.000</title>
     <meta name="description" content="Vive la experiencia del parapente en Maitencillo. Vuelos panorámicos y freestyle sobre el mar. ¡Reserva ahora!">
+
+    <!-- ================= -->
+    <!-- ESTILOS GLOBALES -->
+    <!-- ================= -->
     <style>
         /* Reset y estilos base */
         * {
@@ -71,24 +78,701 @@
             flex-shrink: 0;
         }
     </style>
+
+    <!-- =================== -->
+    <!-- ESTILOS DE NAVBAR -->
+    <!-- =================== -->
+    <style>
+        .nav-float {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.125rem;
+            color: #1d1d1f;
+            text-decoration: none;
+        }
+
+        .nav-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #f5f5f7;
+            border-radius: 100px;
+            font-size: 0.875rem;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #22c55e;
+        }
+
+        .status-dot.active {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+            70% { box-shadow: 0 0 0 6px rgba(34,197,94,0); }
+            100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+        }
+    </style>
+
+    <!-- =================== -->
+    <!-- ESTILOS DEL HERO -->
+    <!-- =================== -->
+    <style>
+        .hero {
+            min-height: 100vh;
+            background: #000;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 5rem 1rem 2rem;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 4vw, 1.5rem);
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-schedule {
+            font-size: clamp(1rem, 3vw, 1.25rem);
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 640px) {
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+                padding: 0 1rem;
+            }
+
+            .hero-buttons .button {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <!-- ===================== -->
+    <!-- ESTILOS DE SERVICIOS -->
+    <!-- ===================== -->
+    <style>
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-image {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #f5f5f7;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #FF6B00;
+            margin: 1rem 0;
+        }
+
+        .features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .features li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .features li svg {
+            color: #FF6B00;
+        }
+    </style>
+
+<!-- ================== -->
+    <!-- ESTILOS DEL FAQ -->
+    <!-- ================== -->
+    <style>
+        .faq-section {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #f5f5f7;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            opacity: 0;
+            color: #666;
+        }
+
+        .faq-item.active .faq-answer {
+            height: auto;
+            padding-bottom: 1.5rem;
+            opacity: 1;
+        }
+    </style>
+
+    <!-- ======================= -->
+    <!-- ESTILOS DEL FORMULARIO -->
+    <!-- ======================= -->
+    <style>
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #666;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+            appearance: none;
+            background: #fff;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #FF6B00;
+        }
+
+        .form-group select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23666'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.5em;
+            padding-right: 2.5rem;
+        }
+    </style>
+
+    <!-- ========================= -->
+    <!-- ESTILOS WHATSAPP FLOTANTE -->
+    <!-- ========================= -->
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+        }
+
+        .whatsapp-button {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: #ff4444;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            opacity: 0;
+            transform: scale(0);
+            transition: all 0.3s;
+        }
+
+        .notification-badge.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .message-popup {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            background: white;
+            padding: 12px 16px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            font-size: 14px;
+            width: 200px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s;
+            pointer-events: none;
+        }
+
+        .message-popup.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 
+<!-- ===================== -->
+<!-- CONTENIDO PRINCIPAL -->
+<!-- ===================== -->
 <body>
-    <header>
-        <h1>Bienvenidos a Nuestra Landing Page</h1>
-    </header>
-    <main>
-        <section class="section">
-            <h2 class="section-title">Sobre Nosotros</h2>
-            <p>Vive la experiencia del parapente en Maitencillo. Vuelos panorámicos y freestyle sobre el mar.</p>
+    <!-- Navegación -->
+    <nav class="nav-float">
+        <a href="#" class="nav-brand">Alma de Aventura</a>
+        <div class="nav-status">
+            <span class="status-dot"></span>
+            <span>Volando ahora</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="hero-title">
+            Parapente en Maitencillo
+            <svg class="icon" style="width: 32px; height: 32px;" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M21 12l-8-8v4H4v8h9v4l8-8z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </h1>
+        
+        <p class="hero-subtitle">
+            La mejor experiencia de vuelo sobre el mar
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M21 18H3M21 12H3M21 6H3" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </p>
+        
+        <div class="hero-buttons">
+            <a href="#reserva" class="button button-primary">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <rect x="3" y="4" width="18" height="18" rx="2" stroke-width="2"/>
+                    <path d="M16 2v4M8 2v4M3 10h18" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Reservar Vuelo
+            </a>
+            
+            <a href="https://wa.me/56957138795" class="button button-whatsapp">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.11 3.89c-2.12-2.13-4.93-3.3-7.92-3.3-6.16 0-11.17 5.01-11.17 11.17 0 1.96.51 3.88 1.48 5.58l-1.58 5.77 5.91-1.55c1.64.9 3.49 1.37 5.36 1.37h.01c6.16 0 11.17-5.01 11.17-11.17 0-2.99-1.17-5.8-3.29-7.92z"/>
+                </svg>
+                Consúltanos
+            </a>
+        </div>
+    </section>
+
+<!-- ===================== -->
+    <!-- SECCIÓN DE SERVICIOS -->
+    <!-- ===================== -->
+    <div class="container">
+        <section class="section" id="servicios">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <!-- Card Freestyle -->
+                <div class="card">
+                    <img src="https://www.almadeaventura.cl/wp-content/uploads/2023/11/FreestyleMaitencillo700x700Landing-1.webp" 
+                         alt="Vuelo Freestyle" 
+                         class="card-image">
+                    <div class="card-content">
+                        <span class="badge">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Más Popular
+                        </span>
+                        <h3>Vuelo Freestyle</h3>
+                        <div class="price">$95.000</div>
+                        <ul class="features">
+                            <li>
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M20 6L9 17l-5-5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                20 minutos de vuelo
+                            </li>
+                            <li>
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M20 6L9 17l-5-5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Maniobras acrobáticas
+                            </li>
+                            <li>
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M20 6L9 17l-5-5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Vista al mar garantizada
+                            </li>
+                        </ul>
+                        <div class="button-group">
+                            <a href="#reserva" class="button button-primary">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" stroke-width="2"/>
+                                    <path d="M16 2v4M8 2v4M3 10h18" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                Reservar
+                            </a>
+                            <a href="https://wa.me/56957138795" class="button button-whatsapp">
+                                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.11 3.89c-2.12-2.13-4.93-3.3-7.92-3.3-6.16 0-11.17 5.01-11.17 11.17 0 1.96.51 3.88 1.48 5.58l-1.58 5.77 5.91-1.55c1.64.9 3.49 1.37 5.36 1.37h.01c6.16 0 11.17-5.01 11.17-11.17 0-2.99-1.17-5.8-3.29-7.92z"/>
+                                </svg>
+                                Consultar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Panorámico -->
+                [Estructura similar a la card Freestyle, con sus datos específicos]
+
+                <!-- Card Hike & Fly -->
+                [Estructura similar a la card Freestyle, con sus datos específicos]
+            </div>
         </section>
-        <section class="section">
-            <h2 class="section-title">Servicios</h2>
-            <p>Descripción de los servicios ofrecidos.</p>
+
+        <!-- =================== -->
+        <!-- SECCIÓN DE PRECIOS -->
+        <!-- =================== -->
+        <section class="section" id="precios">
+            <h2 class="section-title">Precios y Servicios</h2>
+            <div class="price-summary">
+                <ul class="price-list">
+                    <li>
+                        <span>Freestyle (20 min)</span>
+                        <strong>$95.000</strong>
+                    </li>
+                    <li>
+                        <span>Panorámico (15 min)</span>
+                        <strong>$60.000</strong>
+                    </li>
+                    <li>
+                        <span>Panorámico Plus (20 min)</span>
+                        <strong>$70.000</strong>
+                    </li>
+                    <li>
+                        <span>Hike and Fly</span>
+                        <strong>$150.000</strong>
+                    </li>
+                    <li>
+                        <span>Video FULL HD/4K</span>
+                        <strong>$19.000</strong>
+                    </li>
+                </ul>
+            </div>
         </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Nombre de la Empresa</p>
-    </footer>
+
+        <!-- ===================== -->
+        <!-- SECCIÓN DE PREGUNTAS -->
+        <!-- ===================== -->
+        <section class="section" id="faq">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        ¿Cuál es la diferencia entre el vuelo Freestyle y Panorámico?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        El vuelo Freestyle incluye maniobras acrobáticas y es más intenso, 
+                        ideal para quienes buscan adrenalina. El Panorámico es un vuelo 
+                        suave y relajado, perfecto para familias y principiantes.
+                    </div>
+                </div>
+                [Más preguntas con la misma estructura]
+            </div>
+        </section>
+
+        <!-- ======================= -->
+        <!-- FORMULARIO DE RESERVA -->
+        <!-- ======================= -->
+        <section class="section" id="reserva">
+            <h2 class="section-title">Reserva tu Vuelo</h2>
+            <div class="form-container">
+                <form id="reservaForm">
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp</label>
+                        <input type="tel" 
+                               id="whatsapp" 
+                               required 
+                               pattern="^(\+?56)?9\d{8}$" 
+                               placeholder="+569 XXXX XXXX">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" 
+                               id="nombre" 
+                               required 
+                               placeholder="Tu nombre completo">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" 
+                               id="email" 
+                               required 
+                               placeholder="tu@email.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pasajeros">Cantidad de pasajeros</label>
+                        <select id="pasajeros" required>
+                            <option value="">Selecciona cantidad</option>
+                            <option value="1">1 persona</option>
+                            <option value="2">2 personas</option>
+                            <option value="3">3 personas</option>
+                            <option value="4">4 personas</option>
+                            <option value="5+">5 o más personas</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="button button-primary">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="3" y="4" width="18" height="18" rx="2" stroke-width="2"/>
+                            <path d="M16 2v4M8 2v4M3 10h18" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Enviar Reserva
+                    </button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- ================= -->
+    <!-- WHATSAPP FLOTANTE -->
+    <!-- ================= -->
+    <div class="whatsapp-float">
+        <div class="whatsapp-button" onclick="window.open('https://wa.me/56957138795', '_blank')">
+            <svg class="icon" viewBox="0 0 24 24" fill="white">
+                <path d="M20.11 3.89c-2.12-2.13-4.93-3.3-7.92-3.3-6.16 0-11.17 5.01-11.17 11.17 0 1.96.51 3.88 1.48 5.58l-1.58 5.77 5.91-1.55c1.64.9 3.49 1.37 5.36 1.37h.01c6.16 0 11.17-5.01 11.17-11.17 0-2.99-1.17-5.8-3.29-7.92z"/>
+            </svg>
+            <div class="notification-badge">1</div>
+        </div>
+        <div class="message-popup">
+            ¿Tienes dudas? ¡Conversemos!
+        </div>
+    </div>
+
+    <!-- =================== -->
+    <!-- SCRIPTS DE LA PÁGINA -->
+    <!-- =================== -->
+    <script>
+        // Función para actualizar el estado según la hora
+        function updateStatus() {
+            const now = new Date();
+            const hour = now.getHours();
+            const statusDot = document.querySelector('.status-dot');
+            const statusText = document.querySelector('.nav-status span:last-child');
+
+            if (hour >= 12 && hour < 18) {
+                statusDot.classList.add('active');
+                statusDot.classList.remove('inactive');
+                statusText.textContent = 'Volando ahora';
+            } else {
+                statusDot.classList.remove('active');
+                statusDot.classList.add('inactive');
+                statusText.textContent = 'Hasta mañana';
+            }
+        }
+
+        // Actualizar estado cada minuto
+        updateStatus();
+        setInterval(updateStatus, 60000);
+
+        // FAQs Interactivas
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+
+                // Cerrar todos los FAQs
+                document.querySelectorAll('.faq-item').forEach(faqItem => {
+                    faqItem.classList.remove('active');
+                });
+
+                // Abrir el seleccionado
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Notificación de WhatsApp
+        setTimeout(() => {
+            const badge = document.querySelector('.notification-badge');
+            const popup = document.querySelector('.message-popup');
+            
+            badge.classList.add('active');
+            popup.classList.add('active');
+
+            setTimeout(() => {
+                popup.classList.remove('active');
+            }, 5000);
+        }, 15000);
+
+        // Validación del formulario
+        document.getElementById('reservaForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const whatsapp = document.getElementById('whatsapp').value;
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const pasajeros = document.getElementById('pasajeros').value;
+
+            // Validaciones
+            if (!whatsapp.match(/^(\+?56)?9\d{8}$/)) {
+                alert('Por favor, ingresa un número de WhatsApp válido');
+                return;
+            }
+
+            if (nombre.length < 3) {
+                alert('Por favor, ingresa tu nombre completo');
+                return;
+            }
+
+            if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                alert('Por favor, ingresa un email válido');
+                return;
+            }
+
+            if (!pasajeros) {
+                alert('Por favor, selecciona la cantidad de pasajeros');
+                return;
+            }
+
+            // Aquí puedes agregar el código para enviar el formulario
+            alert('¡Gracias por tu reserva! Te contactaremos pronto por WhatsApp');
+            this.reset();
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
