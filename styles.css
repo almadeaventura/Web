@@ -437,3 +437,36 @@ body {
         margin: 0.5rem 0;
     }
 }
+
+/* Estilos para la descripción con "Leer más" */
+.description {
+    max-height: 4.5rem; /* Mostrar solo 3 líneas de texto */
+    overflow: hidden;
+    position: relative;
+}
+
+.description::after {
+    content: "Leer más";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: white;
+    color: var(--color-primary);
+    padding: 0 0.5rem;
+    cursor: pointer;
+}
+
+.description.expanded {
+    max-height: none;
+}
+
+.description.expanded::after {
+    content: "Leer menos";
+}
+
+.card-content .badges {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Añadir espacio entre los iconos */
+    margin-bottom: 1rem;
+}
