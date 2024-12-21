@@ -7,7 +7,6 @@
     <meta name="description" content="Vive la experiencia del parapente en Maitencillo. Vuelos panorámicos y freestyle sobre el mar. ¡Reserva ahora!">
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <header>
         <nav class="nav-float">
@@ -18,7 +17,6 @@
             </div>
         </nav>
     </header>
-
     <main>
         <section class="hero">
             <h1 class="hero-title">
@@ -49,7 +47,6 @@
                 </a>
             </div>
         </section>
-
         <section class="section" id="servicios">
             <h2 class="section-title">Nuestros Servicios</h2>
             <div class="services-grid">
@@ -106,7 +103,102 @@
                 <!-- Más tarjetas de servicios -->
             </div>
         </section>
-
         <section class="section" id="precios">
             <h2 class="section-title">Precios y Servicios</h2>
-            <div class="price
+            <div class="price-summary">
+                <ul class="price-list">
+                    <li>
+                        <span>Freestyle (20 min)</span>
+                        <strong>$95.000</strong>
+                    </li>
+                    <li>
+                        <span>Panorámico (15 min)</span>
+                        <strong>$60.000</strong>
+                    </li>
+                    <li>
+                        <span>Panorámico Plus (20 min)</span>
+                        <strong>$70.000</strong>
+                    </li>
+                    <li>
+                        <span>Hike and Fly</span>
+                        <strong>$150.000</strong>
+                    </li>
+                    <li>
+                        <span>Video FULL HD/4K</span>
+                        <strong>$19.000</strong>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="section" id="faq">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        ¿Cuál es la diferencia entre el vuelo Freestyle y Panorámico?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        El vuelo Freestyle incluye maniobras acrobáticas y es más intenso, 
+                        ideal para quienes buscan adrenalina. El Panorámico es un vuelo 
+                        suave y relajado, perfecto para familias y principiantes.
+                    </div>
+                </div>
+                <!-- Más preguntas frecuentes -->
+            </div>
+        </section>
+        <section class="section" id="reserva">
+            <h2 class="section-title">Reserva tu Vuelo</h2>
+            <div class="form-container">
+                <form id="reservaForm">
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp</label>
+                        <input type="tel" id="whatsapp" required pattern="^(\+?56)?9\d{8}$" placeholder="+569 XXXX XXXX">
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" required placeholder="Tu nombre completo">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required placeholder="tu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="pasajeros">Cantidad de pasajeros</label>
+                        <select id="pasajeros" required>
+                            <option value="">Selecciona cantidad</option>
+                            <option value="1">1 persona</option>
+                            <option value="2">2 personas</option>
+                            <option value="3">3 personas</option>
+                            <option value="4">4 personas</option>
+                            <option value="5+">5 o más personas</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="button button-primary">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="3" y="4" width="18" height="18" rx="2" stroke-width="2"/>
+                            <path d="M16 2v4M8 2v4M3 10h18" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Enviar Reserva
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="whatsapp-float">
+            <div class="whatsapp-button" onclick="window.open('https://wa.me/56957138795', '_blank')">
+                <svg class="icon" viewBox="0 0 24 24" fill="white">
+                    <path d="M20.11 3.89c-2.12-2.13-4.93-3.3-7.92-3.3-6.16 0-11.17 5.01-11.17 11.17 0 1.96.51 3.88 1.48 5.58l-1.58 5.77 5.91-1.55c1.64.9 3.49 1.37 5.36 1.37h.01c6.16 0 11.17-5.01 11.17-11.17 0-2.99-1.17-5.8-3.29-7.92z"/>
+                </svg>
+                <div class="notification-badge">1</div>
+            </div>
+            <div class="message-popup">
+                ¿Tienes dudas? ¡Conversemos!
+            </div>
+        </div>
+        <p>&copy; 2024 Nombre de la Empresa</p>
+    </footer>
+    <script src="scripts.js" defer></script>
+</body>
+</html>
