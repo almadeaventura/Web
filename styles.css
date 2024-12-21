@@ -34,10 +34,9 @@ body {
 }
 
 .section {
-    padding: 4rem 0;
+    padding: 3rem 0; /* Ajuste para uniformidad */
 }
 
-/* Navegación */
 .nav-float {
     position: fixed;
     top: 0;
@@ -159,7 +158,7 @@ body {
     display: flex;
     gap: 0.75rem;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;  /* Alinear a la izquierda */
 }
 
 .button-primary {
@@ -196,7 +195,7 @@ body {
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.25rem;
+    gap: 1.5rem;  /* Ajustar el espacio entre cards */
     margin: 2rem auto;
     max-width: 1400px;
     padding: 0 1rem;
@@ -210,6 +209,7 @@ body {
     transition: var(--transition);
     display: flex;
     flex-direction: column;
+    height: calc(100vh - 10rem); /* Ajustar el alto para teléfonos */
     will-change: transform;
     contain: content;
 }
@@ -376,6 +376,10 @@ body {
     box-shadow: 0 8px 24px rgba(37,211,102,0.2);
 }
 
+.whatsapp-button .icon {
+    margin: 0;  /* Corregir icono descentrado */
+}
+
 .notification-badge {
     position: absolute;
     top: -6px;
@@ -432,26 +436,4 @@ body {
     .card {
         margin: 0.5rem 0;
     }
-
-/* Mejorar distancias entre las cards */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;  /* Ajustar el espacio entre cards */
-    margin: 2rem auto;
-    max-width: 1400px;
-    padding: 0 1rem;
-}
-
-/* Alinear los botones a la izquierda */
-.button-group {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    justify-content: flex-start;  /* Cambiar a flex-start para alinear a la izquierda */
-}
-
-/* Corregir el icono descentrado en el botón flotante */
-.whatsapp-button .icon {
-    margin: 0;  /* Eliminar el margen */
 }
