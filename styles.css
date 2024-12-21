@@ -1,3 +1,8 @@
+Claro, aquí está el archivo CSS completo mejorado, incorporando todas las mejoras mencionadas anteriormente:
+
+Aquí está el archivo CSS completo mejorado con todos los cambios sugeridos anteriormente:
+
+```css
 /* Variables */
 :root {
     --color-primary: #FF6B00;
@@ -125,20 +130,41 @@ body {
     gap: 0.5rem;
 }
 
-/* Botones */
+/* Iconos mejorados */
+.icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.5rem;
+}
+
+/* Botones mejorados */
 .button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
-    padding: 0.875rem 1.75rem;
+    padding: 0.75rem 1.25rem;
     border-radius: var(--radius-full);
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 500;
     text-decoration: none;
     transition: var(--transition);
     border: none;
     cursor: pointer;
+    min-height: 44px;
+    white-space: nowrap;
+}
+
+.button:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.button-group {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .button-primary {
@@ -171,11 +197,11 @@ body {
     margin-top: 2rem;
 }
 
-/* Cards y Grid */
+/* Cards y Grid mejorados */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.25rem;
     margin: 2rem auto;
     max-width: 1400px;
     padding: 0 1rem;
@@ -189,6 +215,8 @@ body {
     transition: var(--transition);
     display: flex;
     flex-direction: column;
+    will-change: transform;
+    contain: content;
 }
 
 .card:hover {
@@ -197,14 +225,16 @@ body {
 }
 
 .card-image {
+    aspect-ratio: 1/1;
+    background: #f5f5f5;
     width: 100%;
-    height: 280px;
+    height: auto;
     object-fit: cover;
     border-radius: var(--radius) var(--radius) 0 0;
 }
 
 .card-content {
-    padding: 1.5rem;
+    padding: 1.25rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -230,7 +260,7 @@ body {
     margin: 1rem 0;
 }
 
-/* Lista de características */
+/* Lista de características mejorada */
 .features {
     list-style: none;
     margin: 1.5rem 0;
@@ -242,7 +272,7 @@ body {
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 0.75rem;
-    color: #666;
+    color: #444;
 }
 
 .features li svg {
@@ -276,7 +306,7 @@ body {
     overflow: hidden;
     transition: var(--transition);
     opacity: 0;
-    color: #666;
+    color: #444;
 }
 
 .faq-item.active .faq-answer {
@@ -285,7 +315,7 @@ body {
     opacity: 1;
 }
 
-/* Formulario */
+/* Formulario mejorado */
 .form-container {
     max-width: 500px;
     margin: 0 auto;
@@ -304,7 +334,7 @@ body {
     margin-bottom: 0.5rem;
     font-size: 0.875rem;
     font-weight: 500;
-    color: #666;
+    color: #444;
 }
 
 .form-group input,
@@ -315,15 +345,17 @@ body {
     border-radius: 12px;
     font-size: 1rem;
     transition: var(--transition);
+    min-height: 44px;
 }
 
 .form-group input:focus,
 .form-group select:focus {
     outline: none;
     border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(255,107,0,0.1);
 }
 
-/* WhatsApp flotante */
+/* WhatsApp flotante mejorado */
 .whatsapp-float {
     position: fixed;
     bottom: 2rem;
@@ -346,6 +378,7 @@ body {
 
 .whatsapp-button:hover {
     transform: scale(1.1);
+    box-shadow: 0 8px 24px rgba(37,211,102,0.2);
 }
 
 .notification-badge {
@@ -393,36 +426,14 @@ body {
     transform: translateY(0);
 }
 
-/* Media Queries */
+/* Media Queries mejorados */
 @media (max-width: 1024px) {
     .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .services-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.25rem;
         padding: 0 1rem;
-    }
-
-    .hero-title {
-        padding: 0 1rem;
-        font-size: 2.5rem;
-    }
-
-    .card {
-        min-height: auto;
-    }
-}
-
-@media (max-width: 480px) {
-    .card {
-        margin: 0 0.5rem;
     }
     
-    .form-container {
-        padding: 1rem;
+    .card {
+        margin: 0.5rem 0;
     }
-}
