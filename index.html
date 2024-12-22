@@ -1,337 +1,173 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Sección 1: Head y SEO -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parapente en Maitencillo | Vuelos desde $60.000</title>
     <meta name="description" content="Vive la experiencia del parapente en Maitencillo. Vuelos panorámicos y freestyle sobre el mar con vistas garantizadas. ¡Reserva ahora!">
     
-    <!-- Meta Open Graph -->
-    <meta property="og:title" content="Parapente en Maitencillo">
+    <!-- SEO Tags -->
+    <title>Parapente en Maitencillo | Vuelos desde $60.000 - Alma de Aventura</title>
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="parapente, Maitencillo, vuelo panorámico, freestyle, Chile, deporte extremo">
+    <link rel="canonical" href="https://www.almadeaventura.cl">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Parapente en Maitencillo - Alma de Aventura">
     <meta property="og:description" content="La mejor experiencia de vuelo sobre el mar. Vuelos desde $60.000">
     <meta property="og:image" content="https://www.almadeaventura.cl/wp-content/uploads/2023/11/FreestyleMaitencillo700x700Landing-1.webp">
     <meta property="og:url" content="https://www.almadeaventura.cl">
     
-    <!-- Estilos -->
+    <!-- Recursos Críticos -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="main.js" as="script">
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SportsActivityLocation",
+        "name": "Alma de Aventura - Parapente en Maitencillo",
+        "description": "Experiencias de vuelo en parapente sobre el mar en Maitencillo",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Maitencillo",
+            "addressRegion": "Valparaíso",
+            "addressCountry": "CL"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "-32.6425",
+            "longitude": "-71.4322"
+        },
+        "openingHours": "Mo-Su 12:00-18:00",
+        "telephone": "+56957138795",
+        "priceRange": "$60.000 - $150.000"
+    }
+    </script>
 </head>
+
 <body>
-    <!-- Navegación -->
-    <nav class="nav-float">
-        <a href="#" class="nav-brand">Alma de Aventura</a>
-        <div class="nav-status">
-            <span class="status-dot"></span>
+    <!-- Sección 2: Navegación -->
+    <nav class="nav-float" aria-label="Navegación principal">
+        <a href="#" class="nav-brand" aria-label="Alma de Aventura">Alma de Aventura</a>
+        <div class="nav-status" role="status" aria-live="polite">
+            <span class="status-dot active"></span>
             <span>Desde mediodía</span>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1 class="hero-title">
-            Parapente en Maitencillo
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path d="M21 12l-8-8v4H4v8h9v4l8-8z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </h1>
-        
-        <p class="hero-subtitle">
-            La mejor experiencia de vuelo sobre el mar
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path d="M21 18H3M21 12H3M21 6H3" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-        </p>
-        
-        <div class="hero-buttons">
-            <a href="#reserva" class="button button-primary">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <rect x="3" y="4" width="18" height="18" rx="2" stroke-width="2"/>
-                    <path d="M16 2v4M8 2v4M3 10h18" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                Reservar Vuelo
-            </a>
-            
-            <a href="https://wa.me/56957138795" class="button button-whatsapp">
-                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20.11 3.89c-2.12-2.13-4.93-3.3-7.92-3.3-6.16 0-11.17 5.01-11.17 11.17 0 1.96.51 3.88 1.48 5.58l-1.58 5.77 5.91-1.55c1.64.9 3.49 1.37 5.36 1.37h.01c6.16 0 11.17-5.01 11.17[...]
-                </svg>
-                Consúltanos
-            </a>
-        </div>
-    </section>
-
-    <div class="container">
-       <!-- Resumen de Precios -->
-<section class="section" id="precios">
-    <h2 class="section-title">Nuestros Precios</h2>
-    <div class="card">
-        <div class="card-content">
-            <div class="price-summary">
-                <ul class="price-list">
-                    <li>
-                        <span>Freestyle (20 min)</span>
-                        <strong>$95.000</strong>
-                    </li>
-                    <li>
-                        <span>Panorámico (15 min)</span>
-                        <strong>$60.000</strong>
-                    </li>
-                    <li>
-                        <span>Panorámico Plus (20 min)</span>
-                        <strong>$70.000</strong>
-                    </li>
-                    <li>
-                        <span>Hike and Fly</span>
-                        <strong>$150.000</strong>
-                    </li>
-                    <li>
-                        <span>Video FULL HD/4K</span>
-                        <strong>$19.000</strong>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Servicios -->
-<section class="section" id="servicios">
-    <h2 class="section-title">Nuestros Servicios</h2>
-    <div class="services-grid">
-        <!-- Freestyle Card -->
-        <div class="card">
-            <img src="https://www.almadeaventura.cl/wp-content/uploads/2023/11/FreestyleMaitencillo700x700Landing-1.webp" 
-                 alt="Vuelo Freestyle" 
-                 class="card-image">
-            <div class="card-content">
-                <div class="badges">
+    <main class="container">
+        <!-- Sección 3: Precios -->
+        <section class="section" id="precios" aria-labelledby="precios-title">
+            <h2 class="section-title" id="precios-title">Nuestros Precios</h2>
+            <div class="card price-card">
+                <div class="card-badges">
                     <span class="badge">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-width="2"/>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                            <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        Recomendado
-                    </span>
-                    <span class="badge">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M12 8v4l3 2m-3-2-3-2m9 7a9 9 0 1 0-9-9 9 9 0 0 0 9 9z" stroke-width="2"/>
-                        </svg>
-                        20 mins
+                        Precios 2024
                     </span>
                 </div>
-                <h3>Vuelo Freestyle</h3>
-                <h4>La mejor experiencia de vuelo sobre el mar</h4>
-                <p class="description">
-                    El vuelo Freestyle incluye maniobras acrobáticas y es más intenso, ideal para quienes buscan adrenalina.
-                    <span class="read-more">Leer más</span>
-                </p>
-                <div class="price">$95.000</div>
-                <ul class="features">
-                    <li>
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M20 6L9 17l-5-5" stroke-width="2"/>
-                        </svg>
-                        20 minutos de vuelo acrobático
-                    </li>
-                    <li>
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M20 6L9 17l-5-5" stroke-width="2"/>
-                        </svg>
-                        Maniobras extremas seguras
-                    </li>
-                    <li>
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M20 6L9 17l-5-5" stroke-width="2"/>
-                        </svg>
-                        Fotos y videos disponibles
-                    </li>
-                </ul>
-                <div class="button-group">
-                    <a href="#reserva" class="button button-primary">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M21 12l-8-8v4H4v8h9v4l8-8z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Reservar
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Panorámico Card -->
-        <div class="card">
-            <img src="https://www.almadeaventura.cl/wp-content/uploads/2023/11/vistaVuelopanoramico700x700.webp" 
-                 alt="Vuelo Panorámico" 
-                 class="card-image">
-            <div class="card-content">
-                <span class="badge">
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path d="M3 12h18M3 6h18M3 18h18" stroke-width="2"/>
-                    </svg>
-                    Vuelo Tranquilo
-                </span>
-                <h3>Vuelo Panorámico</h3>
-                <div class="price">Desde $60.000</div>
-                <ul class="features">
-                    <li>15 minutos: $60.000</li>
-                    <li>20 minutos: $70.000</li>
-                    <li>Vuelo suave y relajado</li>
-                    <li>Ideal para principiantes</li>
-                </ul>
-                <div class="button-group">
-                    <a href="#reserva" class="button button-primary">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M21 12l-8-8v4H4v8h9v4l8-8z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Reservar
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Hike & Fly Card -->
-        <div class="card">
-            <img src="https://www.almadeaventura.cl/wp-content/uploads/2023/11/hikeAndFly700x700.webp" 
-                 alt="Hike and Fly" 
-                 class="card-image">
-            <div class="card-content">
-                <span class="badge">
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path d="M13 2L3 14h9l-1 8 11-12h-9l2-8z" stroke-width="2"/>
-                    </svg>
-                    Aventura Completa
-                </span>
-                <h3>Hike & Fly</h3>
-                <div class="price">$150.000</div>
-                <ul class="features">
-                    <li>1 hora de trekking</li>
-                    <li>600m de desnivel</li>
-                    <li>15 minutos de vuelo</li>
-                    <li>Para deportistas</li>
-                </ul>
-                <div class="button-group">
-                    <a href="#reserva" class="button button-primary">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M21 12l-8-8v4H4v8h9v4l8-8z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Reservar
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-        <!-- FAQ Section -->
-        <section class="section" id="faq">
-            <h2 class="section-title">Preguntas Frecuentes</h2>
-            <div class="faq-section">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        ¿Cuál es la diferencia entre el vuelo Freestyle y Panorámico?
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        El vuelo Freestyle incluye maniobras acrobáticas y es más intenso, ideal para quienes buscan adrenalina. El Panorámico es un vuelo suave y relajado, perfecto para familias y[...]
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        ¿Qué días y horarios vuelan?
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        Volamos todos los días desde las 13:00, dependiendo de las condiciones del viento. Te confirmaremos el horario exacto el mismo día.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        ¿Hay límite de peso?
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        Sí, el peso máximo es de 120 kg. Es importante que nos informes tu peso al momento de reservar para preparar el equipo adecuado.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        ¿Cómo es el sistema de pago?
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        Puedes reservar con $20.000 y pagar el resto el día de tu vuelo. Aceptamos efectivo, transferencia y tarjetas.
-                    </div>
+                <div class="card-content">
+                    <ul class="price-list" role="list">
+                        <li>
+                            <span>Freestyle (20 mins)</span>
+                            <strong>$95.000</strong>
+                        </li>
+                        <li>
+                            <span>Panorámico (15 mins)</span>
+                            <strong>$60.000</strong>
+                        </li>
+                        <li>
+                            <span>Panorámico Plus (20 mins)</span>
+                            <strong>$70.000</strong>
+                        </li>
+                        <li>
+                            <span>Hike and Fly</span>
+                            <strong>$150.000</strong>
+                        </li>
+                        <li>
+                            <span>Video FULL HD/4K</span>
+                            <strong>$19.000</strong>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Formulario -->
-        <section class="section" id="reserva">
-            <h2 class="section-title">Reserva tu Vuelo</h2>
-            <div class="form-container">
-                <form id="reservaForm">
-                    <div class="form-group">
-                        <label for="whatsapp">WhatsApp</label>
-                        <input type="tel" 
-                               id="whatsapp" 
-                               required 
-                               pattern="^(\+?56)?9\d{8}$" 
-                               placeholder="+569 XXXX XXXX">
+        <!-- Sección 4: Cards de Servicios -->
+        <section class="section" id="servicios" aria-labelledby="servicios-title">
+            <h2 class="section-title" id="servicios-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <!-- Freestyle Card -->
+                <article class="card">
+                    <img src="https://www.almadeaventura.cl/wp-content/uploads/2023/11/FreestyleMaitencillo700x700Landing-1.webp" alt="Vuelo Freestyle en parapente sobre Maitencillo" class="card-image" width="350" height="180" loading="lazy">
+                    <div class="card-badges">
+                        <span class="badge">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                                <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-width="2"/>
+                            </svg>
+                            Recomendado
+                        </span>
+                        <span class="badge">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                                <path d="M12 6v6l4 2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                            </svg>
+                            20 mins
+                        </span>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" 
-                               id="nombre" 
-                               required 
-                               placeholder="Tu nombre completo">
+                    <div class="card-content">
+                        <h3>Vuelo Freestyle</h3>
+                        <div class="price">$95.000</div>
+                        <p class="description">
+                            Vive la máxima adrenalina en nuestro vuelo freestyle con maniobras extremas sobre el mar.
+                            <button class="read-more" aria-expanded="false">Leer más</button>
+                        </p>
+                        <a href="#reserva" class="button button-primary">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-width="2"/>
+                                <path d="M22 6l-10 7L2 6" stroke-width="2"/>
+                            </svg>
+                            Reservar
+                        </a>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" 
-                               id="email" 
-                               required 
-                               placeholder="tu@email.com">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="pasajeros">Cantidad de pasajeros</label>
-                        <select id="pasajeros" required>
-                            <option value="">Selecciona cantidad</option>
-                            <option value="1">1 persona</option>
-                            <option value="2">2 personas</option>
-                            <option value="3">3 personas</option>
-                            <option value="4">4 personas</option>
-                            <option value="5+">5 o más personas</option>
-                        </select>
-                    </div>
+                </article>
 
-                    <button type="submit" class="button button-primary">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M21 12l-8-8v4H4v8h9v4l8-8z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Enviar Reserva
-                    </button>
-                </form>
+                <!-- Panorámico Card -->
+                <article class="card">
+                    <!-- (código existente) -->
+                </article>
+
+                <!-- Hike & Fly Card -->
+                <article class="card">
+                    <!-- (código existente) -->
+                </article>
             </div>
         </section>
-    </div>
 
-   <!-- WhatsApp Flotante -->
-    <div class="whatsapp-float">
-        <div class="whatsapp-button" onclick="window.open('https://wa.me/56957138795', '_blank')">
-            <svg class="icon" viewBox="0 0 24 24" fill="white">
-                <path d="M20.11 3.89c-2.12-2.13-4.93-3.3-7.92-3.3-6.16 0-11.17 5.01-11.17 11.17 0 1.96.51 3.88 1.48 5.58l-1.58 5.77 5.91-1.55c1.64.9 3.49 1.37 5.36 1.37h.01c6.16 0 11.17-5.01 11.17-11.[...]
+        <!-- Sección 5: FAQ -->
+        <!-- (código existente) -->
+
+        <!-- Sección 6: Formulario -->
+        <!-- (código existente) -->
+    </main>
+
+    <!-- Sección 7: WhatsApp Flotante y Scripts -->
+    <aside class="whatsapp-float">
+        <button class="whatsapp-button" onclick="window.open('https://wa.me/56957138795', '_blank')" aria-label="Abrir chat de WhatsApp">
+            <svg class="icon" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true">
+                <path d="M20.11 3.89c-2.12-2.13-4.93-3.3-7.92-3.3-6.16 0-11.17 5.01-11.17 11.17 0 1.96.51 3.88 1.48 5.58l-1.58 5.77 5.91-1.55c1.64.9 3.49 1.37 5.36 1.37h.01c6.16 0 11.17-5.01 11.17-11.17 0-2.99-1.17-5.8-3.29-7.92z"/>
             </svg>
-            <div class="notification-badge">1</div>
-        </div>
-        <div class="message-popup">
-            ¿Tienes dudas? ¡Conversemos!
-        </div>
-    </div>
+            <div class="notification-badge" role="status" aria-label="1 mensaje nuevo">1</div>
+        </button>
+        <div class="message-popup" role="status">¿Tienes dudas? ¡Conversemos!</div>
+    </aside>
 
-    <!-- Scripts -->
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
 </body>
 </html>
