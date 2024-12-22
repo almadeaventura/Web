@@ -29,15 +29,13 @@ document.querySelectorAll('.faq-question').forEach(question => {
         // Cerrar todos los FAQs
         document.querySelectorAll('.faq-item').forEach(faqItem => {
             faqItem.classList.remove('active');
-            const icon = faqItem.querySelector('.faq-icon');
-            if (icon) icon.textContent = '+';
+            faqItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
         });
 
         // Abrir el seleccionado
         if (!isActive) {
             item.classList.add('active');
-            const icon = item.querySelector('.faq-icon');
-            if (icon) icon.textContent = '−';
+            question.setAttribute('aria-expanded', 'true');
         }
     });
 });
@@ -81,40 +79,80 @@ if (form) {
         // Validación de WhatsApp (formato chileno)
         const whatsapp = document.getElementById('whatsapp').value;
         const whatsappRegex = /^(\+?56)?9\d{8}$/;
+        const whatsappError = document.getElementById('whatsapp-error');
         
         if (!whatsappRegex.test(whatsapp)) {
-            alert('Por favor, ingresa un número de WhatsApp válido (+569XXXXXXXX)');
+            whatsappError.textContent = 'Por favor, ingresa un número de WhatsApp válido (+569XXXXXXXX)';
             return;
+        } else {
+            whatsappError.textContent = '';
         }
 
         // Validación de nombre
         const nombre = document.getElementById('nombre').value;
+        const nombreError = document.getElementById('nombre-error');
         if (nombre.length < 3) {
-            alert('Por favor, ingresa tu nombre completo');
+            nombreError.textContent = 'Por favor, ingresa tu nombre completo';
             return;
+        } else {
+            nombreError.textContent = '';
         }
 
         // Validación de email
         const email = document.getElementById('email').value;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const emailError = document.getElementById('email-error');
         if (!emailRegex.test(email)) {
-            alert('Por favor, ingresa un email válido');
+            emailError.textContent = 'Por favor, ingresa un email válido';
             return;
+        } else {
+            emailError.textContent = '';
         }
 
         // Validación de pasajeros
         const pasajeros = document.getElementById('pasajeros').value;
+        const pasajerosError = document.getElementById('pasajeros-error');
         if (!pasajeros) {
-            alert('Por favor, selecciona la cantidad de pasajeros');
+            pasajerosError.textContent = 'Por favor, selecciona la cantidad de pasajeros';
             return;
+        } else {
+            pasajerosError.textContent = '';
         }
 
-        // Aquí podrías agregar el código para enviar el formulario
-        // Por ahora solo mostramos un mensaje de éxito
+        // Si todo está correcto, enviar formulario
+        const formData = {
+            whatsapp,
+            nombre,
+            email,
+            pasajeros
+        };
+
+        // Aquí puedes agregar la lógica para enviar los datos
+        console.log('Datos del formulario:', formData);
         alert('¡Gracias por tu reserva! Te contactaremos pronto por WhatsApp');
-        this.reset();
+        form.reset();
     });
 }
+
+// Intersection Observer para animaciones al hacer scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Observar elementos que queremos animar
+document.querySelectorAll('.section-title, .card, .fade-in').forEach(el => {
+    observer.observe(el);
+});
 
 // Smooth scroll para enlaces internos
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -134,27 +172,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
-
-// Intersection Observer para animaciones al hacer scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-// Observar elementos que queremos animar
-document.querySelectorAll('.card, .section-title, .price-summary').forEach(el => {
-    el.classList.add('fade-in');
-    observer.observe(el);
-});
-
-// Corregir el icono descentrado en el botón flotante
-document.querySelector('.whatsapp-button .icon').style.margin = '0';
